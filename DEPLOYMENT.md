@@ -1,31 +1,39 @@
 # 온브리프 랜딩페이지 배포 가이드
 
+## 📚 관련 문서
+
+- **상세 Supabase 설정 가이드**: [docs/SUPABASE_SETUP_GUIDE.md](docs/SUPABASE_SETUP_GUIDE.md) ⭐ **강력 추천!**
+- **프로젝트 README**: [README.md](README.md)
+- **PRD 문서**: [docs/prd.md](docs/prd.md)
+
+---
+
 ## 1. Supabase 설정
 
-### 1.1 Supabase 프로젝트 생성
+**🎯 상세한 스크린샷과 함께 하는 단계별 가이드를 원하시면 [docs/SUPABASE_SETUP_GUIDE.md](docs/SUPABASE_SETUP_GUIDE.md)를 참조하세요!**
 
-1. [Supabase](https://supabase.com)에 접속하여 로그인
-2. "New Project" 버튼 클릭
-3. 프로젝트 정보 입력:
-   - Name: `ownbrief-landing`
-   - Database Password: 안전한 비밀번호 설정
-   - Region: Northeast Asia (Seoul) 권장
-4. "Create new project" 클릭
+### 빠른 요약:
 
-### 1.2 데이터베이스 테이블 생성
+1. [Supabase](https://supabase.com) 접속 → 로그인
+2. "New Project" 클릭 → 프로젝트명: `ownbrief-landing`, Region: Seoul
+3. SQL Editor에서 아래 스크립트 실행:
 
-1. Supabase 대시보드에서 왼쪽 메뉴의 "SQL Editor" 클릭
-2. "New query" 클릭
-3. 프로젝트 루트의 `supabase-setup.sql` 파일 내용 복사
-4. SQL Editor에 붙여넣기
-5. "Run" 버튼 클릭하여 실행
+```sql
+-- email_subscriptions 테이블 생성
+CREATE TABLE IF NOT EXISTS email_subscriptions (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  email VARCHAR(255) UNIQUE NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW(),
+  source VARCHAR(50) DEFAULT 'landing_page'
+);
 
-### 1.3 API 키 확인
+CREATE UNIQUE INDEX IF NOT EXISTS idx_email ON email_subscriptions(email);
+ALTER TABLE email_subscriptions DISABLE ROW LEVEL SECURITY;
+```
 
-1. 왼쪽 메뉴에서 "Settings" > "API" 클릭
-2. 다음 값들을 복사해두기:
-   - **Project URL** (NEXT_PUBLIC_SUPABASE_URL)
-   - **anon public** key (NEXT_PUBLIC_SUPABASE_ANON_KEY)
+4. Settings > API에서 복사:
+   - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
+   - **anon public key** → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 ## 2. Google Analytics 설정 (선택사항)
 
