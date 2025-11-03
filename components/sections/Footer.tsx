@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export const Footer = () => {
   return (
     <footer className="bg-black text-white py-12 px-4 md:px-8">
@@ -17,6 +19,12 @@ export const Footer = () => {
             >
               문의하기
             </a>
+            <Link
+              href="/privacy"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              개인정보처리방침
+            </Link>
           </div>
 
           {/* Copyright */}
