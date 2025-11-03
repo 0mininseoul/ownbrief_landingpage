@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Link2, Bot, Headphones } from 'lucide-react'
 
 const features = [
@@ -23,22 +24,54 @@ const features = [
   },
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+}
+
 export function Features() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             온브리프의 핵심 기능
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
-              <div
+              <motion.div
                 key={index}
+                variants={itemVariants}
                 className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow bg-white text-center"
               >
                 <div className="flex justify-center mb-4">
@@ -55,10 +88,10 @@ export function Features() {
                 <p className="text-base text-gray-700 leading-relaxed">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

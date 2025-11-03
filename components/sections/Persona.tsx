@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Briefcase, Heart, Smile } from 'lucide-react'
 
 const personas = [
@@ -35,26 +36,59 @@ const personas = [
   },
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5 },
+  },
+}
+
 export function Persona() {
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             나만의 AI 비서, 내 스타일로
           </h2>
           <p className="text-lg md:text-xl text-gray-600">
             3가지 페르소나 중 선택하고, 언제든 변경 가능합니다
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {personas.map((persona, index) => {
             const Icon = persona.icon
             return (
-              <div
+              <motion.div
                 key={index}
-                className={`${persona.bgColor} ${persona.borderColor} border-2 rounded-xl p-6 hover:scale-105 transition-transform cursor-pointer`}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className={`${persona.bgColor} ${persona.borderColor} border-2 rounded-xl p-6 transition-shadow cursor-pointer`}
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="bg-black text-white text-xs font-semibold px-3 py-1 rounded-full">
@@ -80,10 +114,10 @@ export function Persona() {
                 <p className="text-sm text-gray-600">
                   <span className="font-semibold">적합:</span> {persona.suitableFor}
                 </p>
-              </div>
+              </motion.div>
             )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
