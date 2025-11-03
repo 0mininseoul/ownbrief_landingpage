@@ -159,11 +159,54 @@ ownbrief-landing/
 11. FAQ Section
 12. GA4 이벤트 트래킹
 
-### Phase 3: 선택사항 (시간 남으면)
+### Phase 3: 선택사항 (시간 남으면) ✅ 완료
 13. Solution Section
 14. 애니메이션 (Framer Motion)
 15. 스크롤 깊이 트래킹
 16. 개인정보처리방침 별도 페이지
+
+**모든 Phase 개발 완료!**
+
+## 배포하기
+
+상세한 배포 가이드는 [DEPLOYMENT.md](DEPLOYMENT.md)를 참조하세요.
+
+### 빠른 배포 (Vercel 사용)
+
+1. **Supabase 설정**
+   ```bash
+   # 1. https://supabase.com 에서 프로젝트 생성
+   # 2. SQL Editor에서 supabase-setup.sql 실행
+   # 3. Settings > API에서 URL과 anon key 복사
+   ```
+
+2. **Vercel 배포**
+   ```bash
+   # 1. https://vercel.com 에서 GitHub 리포지토리 연결
+   # 2. 환경 변수 설정:
+   #    - NEXT_PUBLIC_SUPABASE_URL
+   #    - NEXT_PUBLIC_SUPABASE_ANON_KEY
+   #    - NEXT_PUBLIC_GA_ID (선택사항)
+   #    - NEXT_PUBLIC_MVP_URL
+   # 3. Deploy 버튼 클릭
+   ```
+
+3. **배포 완료!**
+   - Vercel이 자동으로 URL 생성
+   - main 브랜치에 push하면 자동 재배포
+
+### 로컬 개발 환경
+
+```bash
+# .env.local 파일 생성 (.env.example 참고)
+cp .env.example .env.local
+
+# Supabase 값으로 수정
+nano .env.local
+
+# 개발 서버 실행
+npm run dev
+```
 
 ## 배포 전 체크리스트
 

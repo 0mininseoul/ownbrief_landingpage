@@ -36,3 +36,9 @@ export const trackEmailSubscription = () => {
     method: 'landing_page',
   })
 }
+
+export const trackScrollDepth = (percentScrolled: number) => {
+  trackEvent('scroll', {
+    percent_scrolled: percentScrolled,
+  })
+}
