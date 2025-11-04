@@ -11,11 +11,11 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseClasses = 'px-8 py-4 rounded-lg font-semibold text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed'
+  const baseClasses = 'px-8 py-4 rounded-xl liquid-glass-button disabled:opacity-50 disabled:cursor-not-allowed'
 
   const variantClasses = {
-    primary: 'bg-black text-white hover:bg-gray-800',
-    secondary: 'border-2 border-black text-black hover:bg-gray-50',
+    primary: 'liquid-glass-button',
+    secondary: 'liquid-glass-button',
   }
 
   return (

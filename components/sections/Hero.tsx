@@ -19,7 +19,7 @@ export const Hero = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-white px-4 md:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-black px-4 md:px-8 overflow-hidden">
       <Aurora className="z-0" />
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
         {/* 로고 placeholder - 실제 로고로 교체 필요 */}
@@ -29,12 +29,12 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-2xl font-bold">OwnBrief</h1>
+          <h1 className="text-2xl font-bold text-white">OwnBrief</h1>
         </motion.div>
 
         {/* 메인 캐치프레이즈 */}
         <motion.h2
-          className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -45,7 +45,7 @@ export const Hero = () => {
 
         {/* 서브카피 */}
         <motion.p
-          className="text-xl md:text-2xl font-semibold text-gray-600"
+          className="text-xl md:text-2xl font-semibold text-gray-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
