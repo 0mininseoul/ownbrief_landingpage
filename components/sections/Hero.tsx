@@ -18,7 +18,7 @@ export const Hero = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black px-4 md:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 overflow-hidden">
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
         {/* 로고 placeholder - 실제 로고로 교체 필요 */}
         <motion.div

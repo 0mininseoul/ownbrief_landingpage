@@ -64,8 +64,8 @@ export const Aurora = ({ className = '' }: AuroraProps) => {
       gradient2.addColorStop(0.5, `hsla(${hue2}, 70%, 50%, 0.2)`)
       gradient2.addColorStop(1, 'hsla(0, 0%, 100%, 0)')
 
-      // Clear and draw
-      ctx.fillStyle = '#ffffff'
+      // Clear and draw on dark base for better aurora visibility
+      ctx.fillStyle = '#000000'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       ctx.globalCompositeOperation = 'screen'

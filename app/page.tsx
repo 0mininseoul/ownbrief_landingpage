@@ -9,12 +9,10 @@ import { FAQ } from '@/components/sections/FAQ'
 import { CTA } from '@/components/sections/CTA'
 import { Footer } from '@/components/sections/Footer'
 import { ScrollTracker } from '@/components/ScrollTracker'
-import { Aurora } from '@/components/ui/backgrounds/Aurora'
 
 export default function Home() {
   return (
     <main className="min-h-screen relative">
-      <Aurora />
       <ScrollTracker />
       <Hero />
       <Problem />

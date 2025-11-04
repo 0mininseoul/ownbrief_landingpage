@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import { Aurora } from '@/components/ui/backgrounds/Aurora'
 
 const pretendard = Noto_Sans_KR({
   subsets: ['latin'],
@@ -53,7 +54,10 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased relative">
+        <Aurora />
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   )
 }
