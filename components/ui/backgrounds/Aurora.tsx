@@ -20,8 +20,9 @@ export const Aurora = ({ className = '' }: AuroraProps) => {
     let time = 0
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth
-      canvas.height = canvas.offsetHeight
+      // Fixed positioning으로 뷰포트 전체 크기 사용
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
     }
 
     resize()
@@ -91,8 +92,8 @@ export const Aurora = ({ className = '' }: AuroraProps) => {
   return (
     <canvas
       ref={canvasRef}
-      className={`absolute inset-0 w-full h-full ${className}`}
-      style={{ filter: 'blur(60px)' }}
+      className={`fixed inset-0 w-screen h-screen ${className}`}
+      style={{ filter: 'blur(60px)', pointerEvents: 'none', zIndex: 0 }}
     />
   )
 }
