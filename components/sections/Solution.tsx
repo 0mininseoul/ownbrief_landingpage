@@ -12,10 +12,10 @@ const solutions = [
 
 export function Solution() {
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-black">
       <div className="px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             온브리프가 해결합니다
           </h2>
         </div>
@@ -25,14 +25,14 @@ export function Solution() {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 bg-white p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow"
+                className="flex items-start gap-4 liquid-glass-card p-6 rounded-xl transition-all"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                 </div>
-                <p className="text-lg text-gray-800 font-medium pt-1">
+                <p className="text-lg text-gray-200 font-medium pt-1">
                   {solution}
                 </p>
               </div>

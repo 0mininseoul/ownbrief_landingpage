@@ -31,10 +31,10 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-black">
       <div className="px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             이렇게 간단합니다
           </h2>
         </div>
@@ -44,10 +44,10 @@ export function HowItWorks() {
             const Icon = step.icon
             return (
               <div key={index} className="relative">
-                <div className="text-center">
+                <div className="liquid-glass-card rounded-xl p-6 text-center">
                   {/* Step Number */}
                   <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                    <div className="w-16 h-16 bg-white/20 text-white rounded-full flex items-center justify-center text-2xl font-bold">
                       {step.number}
                     </div>
                   </div>
@@ -55,17 +55,17 @@ export function HowItWorks() {
                   {/* Icon */}
                   <div className="flex justify-center mb-4">
                     <div className="w-12 h-12 flex items-center justify-center">
-                      <Icon className="w-10 h-10 text-gray-700" />
+                      <Icon className="w-10 h-10 text-white" />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-black mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-base text-gray-600">
+                  <p className="text-base text-gray-300">
                     {step.description}
                   </p>
                 </div>
@@ -75,7 +75,7 @@ export function HowItWorks() {
                   <div className="hidden md:block absolute top-8 left-full w-full">
                     <div className="flex items-center justify-center">
                       <svg
-                        className="w-8 h-8 text-gray-300"
+                        className="w-8 h-8 text-gray-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

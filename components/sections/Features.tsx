@@ -45,7 +45,7 @@ const itemVariants = {
 
 export function Features() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-black">
       <div className="px-4 md:px-8 max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12 md:mb-16"
@@ -54,7 +54,7 @@ export function Features() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             온브리프의 핵심 기능
           </h2>
         </motion.div>
@@ -72,20 +72,20 @@ export function Features() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow bg-white text-center"
+                className="liquid-glass-card rounded-xl p-6 transition-all text-center"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">
+                <h3 className="text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm font-semibold text-gray-600 mb-3">
+                <p className="text-sm font-semibold text-gray-400 mb-3">
                   {feature.subtitle}
                 </p>
-                <p className="text-base text-gray-700 leading-relaxed">
+                <p className="text-base text-gray-300 leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>

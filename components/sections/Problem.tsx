@@ -30,9 +30,9 @@ const problems = [
 
 export const Problem = () => {
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 bg-gray-50">
+    <section className="py-16 md:py-24 px-4 md:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
           매일 아침, 이런 경험 해보셨나요?
         </h2>
 
@@ -40,11 +40,11 @@ export const Problem = () => {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow bg-white hover:-translate-y-1 transition-transform duration-200"
+              className="liquid-glass-card rounded-xl p-6 hover:-translate-y-1 transition-transform duration-200"
             >
-              <problem.icon className="w-12 h-12 mb-4 text-black" />
-              <h3 className="text-xl font-semibold mb-2">{problem.title}</h3>
-              <p className="text-base text-gray-600">{problem.description}</p>
+              <problem.icon className="w-12 h-12 mb-4 text-white" />
+              <h3 className="text-xl font-semibold mb-2 text-white">{problem.title}</h3>
+              <p className="text-base text-gray-300">{problem.description}</p>
             </div>
           ))}
         </div>
