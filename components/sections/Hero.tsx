@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '../ui/Button'
+import { ScrollIndicator } from '@/components/ui/ScrollIndicator'
 import { trackMVPButtonClick } from '@/lib/analytics'
 
 export const Hero = () => {
@@ -18,7 +19,7 @@ export const Hero = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 overflow-hidden bg-black/30">
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
         {/* 로고 placeholder - 실제 로고로 교체 필요 */}
         <motion.div
@@ -32,13 +33,12 @@ export const Hero = () => {
 
         {/* 메인 캐치프레이즈 */}
         <motion.h2
-          className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance text-white"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed tracking-tight text-balance text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          여러 앱을 오가며<br />확인하던 정보들,<br />
-          이제 10분 브리핑 하나로
+          나를 가장 잘 아는 AI 비서 브리핑, 온브리프
         </motion.h2>
 
         {/* 서브카피 */}
@@ -48,7 +48,8 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          창업가를 위한 초개인화 AI 브리핑 솔루션
+          더 이상 여러 앱을 귀찮게 찾아보지 마세요.<br />
+          아침 10분 브리핑 하나로 해결하세요.
         </motion.p>
 
         {/* CTA 버튼 */}
@@ -66,6 +67,7 @@ export const Hero = () => {
           </Button>
         </motion.div>
       </div>
+      <ScrollIndicator />
     </section>
   )
 }

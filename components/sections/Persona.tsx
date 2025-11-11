@@ -51,7 +51,7 @@ const itemVariants = {
 
 export function Persona() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-black/30">
       <div className="px-4 md:px-8 max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12 md:mb-16"

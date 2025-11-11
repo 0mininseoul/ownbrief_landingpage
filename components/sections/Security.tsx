@@ -30,7 +30,7 @@ const timeline = [
 
 export const Security = () => {
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 text-white">
+    <section className="py-16 md:py-24 px-4 md:px-8 text-white bg-black/80">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -47,9 +47,9 @@ export const Security = () => {
               key={index}
               className="text-center p-6"
             >
-              <feature.icon className="w-16 h-16 mx-auto mb-4 text-blue-400" />
+              <feature.icon className="w-16 h-16 mx-auto mb-4 text-white" />
               <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-lg font-semibold text-blue-300 mb-3">
+              <p className="text-lg font-semibold text-gray-300 mb-3">
                 {feature.subtitle}
               </p>
               <p className="text-gray-300">{feature.description}</p>
@@ -71,10 +71,10 @@ export const Security = () => {
                 <div key={index} className="relative">
                   {/* Circle */}
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mb-3 relative z-10">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold mb-3 relative z-10">
                       {index + 1}
                     </div>
-                    <p className="text-sm font-semibold text-blue-300 mb-1">
+                    <p className="text-sm font-semibold text-gray-300 mb-1">
                       {step.time}
                     </p>
                     <p className="text-base text-center">{step.label}</p>
